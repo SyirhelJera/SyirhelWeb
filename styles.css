@@ -1,0 +1,194 @@
+body {
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+    position: relative;
+  }
+  
+  body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity value (0.5) to control the darkness */
+    z-index: -1;
+  }
+  
+  .container {
+    position: relative;
+    text-align: center;
+  }
+  
+  img {
+    width: 50vh;
+    height: 70vh;
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    animation: fade-in 1s forwards;
+  }
+  
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .slide-in {
+    animation: slide-in 0.5s forwards;
+  }
+  
+  @keyframes slide-in {
+    0% {
+      background-position: left;
+    }
+    100% {
+      background-position: right;
+    }
+  }
+  
+  #btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    border-radius: 20px; /* Add the border-radius property */
+  }
+  
+  #btn:hover {
+    opacity: 0.5;
+  }
+  
+  #name {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: "Roboto", sans-serif; /* Add the font-family property */
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  
+  .logo-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    animation: fade-in 0.5s forwards;
+    transition: opacity 0.5s ease-out; /* Add the transition property */
+  }
+  
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fade-out {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  
+  
+  .navbar {
+    background-color: red;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: -200px; /* Start with navbar hidden outside the screen */
+    height: 100vh;
+    width: 200px;
+    transition: left 0.5s ease-out; /* Add transition property for slide effect */
+  }
+  
+  .navbar.show {
+    left: 0; /* Show navbar by sliding it into the screen */
+  }
+  
+  .navbar-brand {
+    margin-bottom: 10px;
+  }
+  
+  .navbar-brand a {
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .navbar-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+
+
+    height: 100%;
+  }
+  
+  .navbar-menu li {
+    margin-bottom: 15px;
+    
+  }
+  
+  .navbar-menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-justify: center;
+  }
+  
+  .navbar-menu li a:hover {
+    color: #ccc;
+    background-color: black;
+    padding-left: 10px;
+    padding-right: 150px;
+    animation: ease-in 0.5s;
+  }
+
+  .triangle {
+    position: absolute;
+    top: 60%;
+    right: -30px; /* Adjust the distance from the right side */
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 90px solid transparent;
+    border-bottom: 90px solid transparent;
+    border-left: 20px solid rgb(255, 255, 255); /* Adjust the color of the triangle */
+  }
+  
